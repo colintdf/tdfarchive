@@ -1,0 +1,2 @@
+server '139.144.144.87',       port: 22, user: 'deploy', roles: %w{nginx frontend web app assets}                                      # Code Server - ALL SITES
+set :deploy_to, '/var/www/tdf.croftsoftsoftware.com'
