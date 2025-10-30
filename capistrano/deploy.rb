@@ -17,7 +17,7 @@ def get_branch()
 end
 
 set :branch, get_branch() || 'master'
-set :linked_dirs, %w{htdocs/wp-content/uploads htdocs/wp-content/webp-express htdocs/wp-content/uploads-webpc htdocs/wp-content/languages spotifycache}
+set :linked_dirs, %w{public/wp-content/uploads}
 
 #set :linked_dirs, %w{backups htdocs/.well-known htdocs/wp-content/uploads htdocs/wp-content/cache htdocs/wp-content/mmr}
 #set :linked_files, %w{ }
