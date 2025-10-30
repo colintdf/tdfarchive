@@ -20,13 +20,18 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'tdf_croftsoftsoftware_com' );
 
-/** Database username */
-define( 'DB_USER', 'root' );
+// if hostname is containts .test then dev:
 
-/** Database password */
-define( 'DB_PASSWORD', '' );
+if (strpos($_SERVER['HTTP_HOST'], '.test') !== false) {
+	define( 'DB_NAME', 'tdf_croftsoftsoftware_com' );
+	define( 'DB_USER', 'root' );
+	define( 'DB_PASSWORD', '' );
+} else {
+	define( 'DB_NAME', 'tdf_croftsoftsoftware_com' );
+	define( 'DB_USER', 'root' );
+	define( 'DB_PASSWORD', '' );
+}
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
