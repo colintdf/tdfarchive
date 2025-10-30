@@ -29,8 +29,8 @@ if (strpos($_SERVER['HTTP_HOST'], '.test') !== false) {
 	define( 'DB_PASSWORD', '' );
 } else {
 	define( 'DB_NAME', 'tdf_croftsoftsoftware_com' );
-	define( 'DB_USER', 'root' );
-	define( 'DB_PASSWORD', '' );
+	define( 'DB_USER', 'tunefountain' );
+	define( 'DB_PASSWORD', 'f1ddlest1cks' );
 }
 
 /** Database hostname */
