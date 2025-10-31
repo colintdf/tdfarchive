@@ -610,7 +610,7 @@ if ( ! has_post_thumbnail( $post_id ) ) {
         // Ensure the path includes /public/wp-content/ and strip anything in between
         // Example: /public/music/wp-content/ → /public/wp-content/
         $local_path = preg_replace( '#/public/.*?/wp-content/#', '/public/wp-content/', $local_path );
-        echo $local_path . '<br />';
+        //echo $local_path . '<br />';
         // If the default image doesn't exist locally, try a slugified title version in the same folder
         if ( ! file_exists( $local_path ) ) {
             // Slugify title and replace apostrophes with hyphens
