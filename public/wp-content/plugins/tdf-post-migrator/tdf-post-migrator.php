@@ -474,6 +474,11 @@ public function migrate_posts( $start = 0 ) {
         $updated_at  = $item['content_update_date'] ?? '';
         $live_at     = $item['content_live_date'] ?? '';
         $ctype       = $item['content_definition'] ?? '';
+        $ctype_l = strtolower( trim( $ctype ) );
+        if ( in_array( $ctype_l, array( 'film', 'game', 'series' ), true ) ) {
+            // Skip items of these content types
+            continue;
+        }
 
         $full_json = array();
         if ( ! empty( $item['full_json_content'] ) && is_string( $item['full_json_content'] ) ) {
