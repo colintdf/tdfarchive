@@ -490,52 +490,17 @@ public function migrate_posts( $start = 0 ) {
         }
         $content = $full_json['post_content'] ?? '';
         if (empty($content)) {
-            $article_url = "{$apidomain}/?action=getArticle&index=" . urlencode( $site_id ) . "&contentid=" . urlencode( $content_id );
-            $response = wp_remote_get( $article_url, array(
+            $fallbackapi = wp_remote_get( "{$apidomain}/?action=get_content&site_id={$site_id}&content_id={$content_id}", array(
                 'timeout'   => 30,
                 'sslverify' => false,
                 'headers'   => array( 'Accept' => 'application/json' ),
             ) );
-
-            if ( ! is_wp_error( $response ) ) {
-                $body = wp_remote_retrieve_body( $response );
-                $article = json_decode( $body, true );
-
-                // Some endpoints wrap the article in a 'data' key (either an object or an array).
-                if ( isset( $article['data'] ) && is_array( $article['data'] ) ) {
-                    // If 'data' is a numeric-indexed array, prefer the first element.
-                    $data_vals = array_values( $article['data'] );
-                    $article = isset( $data_vals[0] ) ? $data_vals[0] : $article['data'];
-                }
-
-                if ( is_array( $article ) ) {
-                    if ( ! empty( $article['content_text'] ) ) {
-                        $content = $article['content_text'];
-                    }
-
-                    // If the article provides a full_json_content payload, merge/replace $full_json if empty
-                    if ( empty( $full_json ) && ! empty( $article['full_json_content'] ) ) {
-                        $maybe = $article['full_json_content'];
-                        if ( is_string( $maybe ) ) {
-                            $decoded = json_decode( $maybe, true );
-                            if ( is_array( $decoded ) ) {
-                                $full_json = $decoded;
-                            }
-                        } elseif ( is_array( $maybe ) ) {
-                            $full_json = $maybe;
-                        }
-                    }
-                }
+            if ( !is_wp_error( $fallbackapi ) ) {
+                $fallbackbody = wp_remote_retrieve_body( $fallbackapi );
+                $fallbackdata = json_decode( $fallbackbody, true );
+                var_dump($fallbackdata);exit;
             }
         }
-                        if ( is_array( $decoded ) ) {
-                            $full_json = $decoded;
-                        }
-                    } elseif ( is_array( $maybe ) ) {
-                        $full_json = $maybe;
-                    }
-                }
-            }
         // --- Replace in-body image links ---
 if ( ! empty( $content ) ) {
     // 1. Replace any old subdomains (film, music, television, gaming, geeklife, life)
