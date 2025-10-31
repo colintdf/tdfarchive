@@ -1,0 +1,245 @@
+{
+	"settings": {
+		"options": {
+			"show_on_front": "posts",
+			"featured-content": {
+				"tag-id": 35890,
+				"tag-name": "featured",
+				"hide-tag": 0,
+				"show-all": 1
+			},
+			"jetpack_global_styles": false
+		},
+		"theme_mods": {
+			"0": false,
+			"nav_menu_locations": [],
+			"custom_css_post_id": -1
+		},
+		"headstart": {
+			"mapped_id_options": [],
+			"mapped_id_theme_mods": [],
+			"keep_submenu_items": true
+		}
+	},
+	"widgets": [],
+	"content": [
+		{
+			"post_type": "post",
+			"post_title": "Startups: Expectations vs. Reality",
+			"post_content": "<!-- wp:paragraph -->\n<p>Seed round stealth crowdsource funding venture iPhone deployment release agile development business-to-business. Beta validation user experience ownership influencer channels. Entrepreneur churn rate user experience termsheet MVP funding.<audio src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/startups.mp3\"><\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/startups.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "startups-expectations-vs-reality",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 29,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		},
+		{
+			"post_type": "post",
+			"post_title": "The Next Big Thing in VC Funding",
+			"post_content": "<!-- wp:paragraph -->\n<p>Incubator responsive web design user experience success ownership investor. Churn rate buzz iPad direct mailing strategy ramen graphical user interface rockstar. Alpha branding ramen non-disclosure agreement venture partnership angel investor paradigm shift.<audio src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/the-next-big-thing.mp3\"><\/audio><\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/the-next-big-thing.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "the-next-big-thing-in-vc-funding",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 24,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		},
+		{
+			"post_type": "post",
+			"post_title": "Will Tech Ever Rule the World?",
+			"post_content": "<!-- wp:paragraph -->\n<p>First mover advantage early adopters freemium angel investor buyer partnership research &amp; development leverage lean startup monetization buzz innovator alpha business-to-business. Business plan validation infographic iPad vesting period.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Infographic creative entrepreneur business-to-business. Prototype beta learning curve responsive web design crowdfunding strategy niche market social proof business model canvas pivot churn rate.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Paradigm shift direct mailing iteration ecosystem supply chain. Direct mailing first mover advantage channels conversion leverage user experience non-disclosure agreement handshake metrics. Startup market freemium iPad buyer MVP entrepreneur buzz A\/B testing ownership series A financing. Conversion product management backing b2b ownership business model canvas hackathon growth hacking first mover advantage.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Traction social media crowdsource entrepreneur network effects graphical user interface disruptive success partnership buzz monetization founders.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>MVP buzz seed round stock agile development long tail crowdfunding business-to-business founders influencer responsive web design. Research &amp; development first mover advantage facebook bandwidth disruptive virality. Graphical user interface twitter focus founders assets.<br>Analytics partnership social media graphical user interface burn rate client beta leverage sales founders deployment crowdsource.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Release backing launch party virality android burn rate branding ecosystem equity customer long tail pivot strategy success. Focus gen-z hackathon crowdfunding scrum project founders business-to-consumer early adopters backing analytics conversion. Termsheet validation handshake advisor backing partner network hypotheses ecosystem.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Business plan strategy series A financing angel investor funding client analytics. Crowdsource bandwidth entrepreneur direct mailing early adopters scrum project stealth sales android success. Business-to-business niche market business plan buyer gen-z research &amp; development business-to-consumer long tail learning curve vesting period venture churn rate stealth.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/will-tech-ever-rule-the-world.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "will-tech-ever-rule-the-world",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 26,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		},
+		{
+			"post_type": "post",
+			"post_title": "AI Explained in Fewer than 140 Characters",
+			"post_content": "<!-- wp:paragraph -->\n<p>Agile development graphical user interface android metrics iPhone. Social media series A financing stealth hackathon creative investor incubator leverage learning curve. Research &amp; development technology traction hackathon lean startup crowdsource direct mailing.<audio src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/07\/ai-explained.mp3\"><\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/07\/ai-explained.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "ai-explained-in-fewer-than-140-characters",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 22,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		},
+		{
+			"post_type": "post",
+			"post_title": "This Week\u2019s Top Stories About Blockchain",
+			"post_content": "<!-- wp:paragraph -->\n<p>Low hanging fruit founders hackathon focus influencer freemium. Stealth MVP market prototype. Return on investment prototype lean startup focus value proposition responsive web design business-to-business. Partnership crowdfunding scrum project.<audio src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/07\/blockchain.mp3\"><\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/07\/blockchain.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "this-weeks-top-stories-about-blockchain",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 20,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		},
+		{
+			"post_type": "post",
+			"post_title": "What\u2019s the Best Encrypted Chat Service?",
+			"post_content": "<!-- wp:paragraph -->\n<p>Paradigm shift funding infographic direct mailing seed money deployment social proof alpha. Prototype vesting period customer focus startup metrics. Business plan venture ramen seed money founders traction user experience infrastructure pitch agile development termsheet.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/encrypted-chat.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "whats-the-best-encrypted-chat-service",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 18,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		},
+		{
+			"post_type": "post",
+			"post_title": "How QR Codes Are Making a Comeback",
+			"post_content": "<!-- wp:paragraph -->\n<p>Itch branding analytics partnership iPhone buyer assets sales. Gamification pivot learning curve branding iteration stealth investor. Equity market leverage seed round business plan ecosystem accelerator agile development launch party.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/qr-codes.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "how-qr-codes-are-making-a-comeback",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 16,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		},
+		{
+			"post_type": "post",
+			"post_title": "5G, the Dark Web, and More: This Week\u2019s Top Stories",
+			"post_content": "<!-- wp:paragraph -->\n<p>Success social media influencer. Pivot termsheet non-disclosure agreement channels scrum project deployment buyer. Monetization A\/B testing bootstrapping. Gen-z interaction design business-to-consumer marketing monetization client.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/5g.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "5g-the-dark-web-and-more-this-weeks-top-stories",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 14,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		},
+		{
+			"post_type": "post",
+			"post_title": "What Every Startup CEO Needs to Know to Succeed",
+			"post_content": "<!-- wp:paragraph -->\n<p>Holy grail facebook beta growth hacking value proposition business-to-business startup mass market ecosystem A\/B testing hackathon iteration pivot. Seed round hackathon user experience facebook niche market branding agile development VC release funding.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/what-every-ceo-needs-to-know.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "what-every-startup-ceo-needs-to-know-to-succeed",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 11,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		},
+		{
+			"post_type": "post",
+			"post_title": "Cord Cutting in the Age of COVID-19",
+			"post_content": "<!-- wp:paragraph -->\n<p>Bootstrapping buzz crowdsource advisor burn rate business-to-business gen-z client A\/B testing ecosystem. Leverage learning curve launch party disruptive android ramen beta accelerator prototype investor. MVP client network effects.<\/p>\n<!-- \/wp:paragraph -->\n\n<!-- wp:audio -->\n<figure class=\"wp-block-audio\"><audio controls src=\"https:\/\/spearheaddemo.files.wordpress.com\/2020\/10\/covid19.mp3\"><\/audio><\/figure>\n<!-- \/wp:audio -->",
+			"post_name": "cord-cutting-in-the-age-of-covid-19",
+			"post_excerpt": "",
+			"menu_order": 0,
+			"post_status": "publish",
+			"comment_status": "closed",
+			"ping_status": "closed",
+			"_starter_page_template": "",
+			"hs_old_id": 7,
+			"hs_post_parent": 0,
+			"hs_taxonomies": {
+				"category_name": [
+					"Uncategorized"
+				],
+				"post_tag_name": []
+			},
+			"hs_custom_meta": "_hs_extra"
+		}
+	],
+	"menus": [],
+	"images": [],
+	"meta": {
+		"blog_id": 210767469,
+		"url": "https:\/\/spearheadblocksdemo.wordpress.com",
+		"update_date": "October 10, 2022, 7:56 pm",
+		"update_timestamp": 1665431787
+	}
+}

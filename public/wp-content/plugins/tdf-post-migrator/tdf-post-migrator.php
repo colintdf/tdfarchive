@@ -143,36 +143,36 @@ if ( ! class_exists( 'TDF_Post_Migrator' ) ) {
             if ( ! current_user_can( 'manage_options' ) ) {
                 wp_die( __( 'Unauthorized request', self::TEXT_DOMAIN ) );
             }
-
             // First request is POST from the form; chained steps are GET.
             if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
+
                 if ( ! isset( $_POST['tdf_pm_nonce'] ) || ! wp_verify_nonce( $_POST['tdf_pm_nonce'], 'tdf_pm_migrate_posts' ) ) {
                     wp_die( __( 'Invalid or expired nonce.', self::TEXT_DOMAIN ) );
                 }
 
                 // If requested, reset imported content before starting.
               if ( isset( $_POST['tdf_pm_reset'] ) && $_POST['tdf_pm_reset'] == '1' ) {
-    $next_reset = isset( $_GET['reset_offset'] ) ? intval( $_GET['reset_offset'] ) : 0;
-    $next_reset = $this->reset_previous_import( $next_reset );
+                $next_reset = isset( $_GET['reset_offset'] ) ? intval( $_GET['reset_offset'] ) : 0;
+                $next_reset = $this->reset_previous_import( $next_reset );
 
-    if ( $next_reset !== false ) {
-        $next_nonce = wp_create_nonce( 'tdf_pm_migrate_posts' );
-        $next_url   = admin_url( 'admin-post.php?action=tdf_pm_migrate_posts&_wpnonce=' . $next_nonce . '&tdf_pm_reset=1&reset_offset=' . $next_reset );
-        echo '<div class="wrap"><h1>Resetting Imported Content</h1>';
-        echo '<p>Deleted a batch of posts (offset ' . esc_html( $next_reset ) . '). Continuing automatically...</p>';
-        echo '<meta http-equiv="refresh" content="0.1;url=' . esc_url( $next_url ) . '">';
-        echo '<p><a href="' . esc_url( $next_url ) . '">Click here if not redirected</a></p></div>';
-        exit;
-    }
+                if ( $next_reset !== false ) {
+                    $next_nonce = wp_create_nonce( 'tdf_pm_migrate_posts' );
+                    $next_url   = admin_url( 'admin-post.php?action=tdf_pm_migrate_posts&_wpnonce=' . $next_nonce . '&tdf_pm_reset=1&reset_offset=' . $next_reset );
+                    echo '<div class="wrap"><h1>Resetting Imported Content</h1>';
+                    echo '<p>Deleted a batch of posts (offset ' . esc_html( $next_reset ) . '). Continuing automatically...</p>';
+                    echo '<meta http-equiv="refresh" content="0.1;url=' . esc_url( $next_url ) . '">';
+                    echo '<p><a href="' . esc_url( $next_url ) . '">Click here if not redirected</a></p></div>';
+                    exit;
+                }
 
-    // Reset complete, start fresh import
-}
+                    // Reset complete, start fresh import
+                }
 
             }
 
             $start = isset( $_GET['start'] ) ? intval( $_GET['start'] ) : 0;
-            $next  = $this->migrate_posts( $start );
 
+            $next  = $this->migrate_posts( $start );
             if ( $next === false ) {
                 wp_safe_redirect( admin_url( 'admin.php?page=tdf-post-migrator&success=1' ) );
                 exit;
@@ -257,7 +257,7 @@ if ( ! class_exists( 'TDF_Post_Migrator' ) ) {
         // Core Migration
         // =========================
 public function migrate_posts( $start = 0 ) {
-    $batchSize = 100;
+    $batchSize = 50;
     $apidomain = 'https://api.thedigitalfix.com';
 
     // -------------------
@@ -443,13 +443,19 @@ public function migrate_posts( $start = 0 ) {
         'headers'   => array( 'Accept' => 'application/json' ),
     ) );
 
+
+
+
     if ( is_wp_error( $response ) ) {
         error_log( 'Error fetching posts: ' . $response->get_error_message() );
+        echo $response->get_error_message();exit;
         return false;
     }
 
     $body = wp_remote_retrieve_body( $response );
     $data = json_decode( $body, true );
+
+
 
     if ( empty( $data ) || ! isset( $data['data'] ) || ! is_array( $data['data'] ) ) {
         error_log( "No more data at start={$start}" );
@@ -477,6 +483,35 @@ public function migrate_posts( $start = 0 ) {
             }
         }
         $content = $full_json['post_content'] ?? '';
+
+        // --- Replace in-body image links ---
+if ( ! empty( $content ) ) {
+    // 1. Replace any old subdomains (film, music, television, gaming, geeklife, life)
+    //    with the unified domain
+    $content = preg_replace(
+        '#https?://(?:www\.)?(?:film|music|television|gaming|geeklife|life)\.thedigitalfix\.com#i',
+        'https://tdf.croftsoftsoftware.com',
+        $content
+    );
+
+    // 2. Normalize paths:
+    //    Remove any intermediate section directory before wp-content
+    //    Example: /music/wp-content/ → /wp-content/
+    $content = preg_replace(
+        '#/(?:film|music|television|gaming|geeklife|life)/wp-content/#i',
+        '/wp-content/',
+        $content
+    );
+
+    // 3. Replace any full absolute URLs (old domains) that still include wp-content
+    //    Example: https://film.thedigitalfix.com/wp-content/... → https://tdf.croftsoftsoftware.com/wp-content/...
+    $content = preg_replace(
+        '#https?://[^/]+/wp-content/#i',
+        'https://tdf.croftsoftsoftware.com/wp-content/',
+        $content
+    );
+}
+
 
         $this->register_content_type_taxonomy();
         $this->register_section_taxonomy();
@@ -552,21 +587,61 @@ public function migrate_posts( $start = 0 ) {
             wp_set_post_terms( $post_id, $tags, 'post_tag', false );
         }
 
-        // --- Featured image logic ---
-        if ( ! has_post_thumbnail( $post_id ) ) {
-            $default_image_url = '';
-            if ( isset( $full_json['images']['default'] ) && is_string( $full_json['images']['default'] ) ) {
-                $default_image_url = $full_json['images']['default'];
-            }
+       // --- Featured image logic ---
+// --- Featured image logic ---
+if ( ! has_post_thumbnail( $post_id ) ) {
+    $default_image_url = '';
+    if ( isset( $full_json['images']['default'] ) && is_string( $full_json['images']['default'] ) ) {
+        $default_image_url = $full_json['images']['default'];
+    }
 
-            if ( $default_image_url ) {
-                $default_image_url = preg_replace( '#^https?://[^/]+#', '', $default_image_url );
-                $default_image_url = home_url( $default_image_url );
-                $attach_featured_image( $post_id, $default_image_url, $slug ?: ( $title ?: 'image' ) );
-            } elseif ( ! empty( $item['thumb_encoded'] ) ) {
-                $attach_featured_image( $post_id, $item['thumb_encoded'], $slug ?: ( $title ?: 'image' ) );
+    if ( $default_image_url ) {
+        // Convert URL to relative path
+        $relative_path = preg_replace( '#^https?://[^/]+#', '', $default_image_url );
+        $local_path = ABSPATH . ltrim( $relative_path, '/' );
+
+        // --- IMPORTANT FIX ---
+        // Ensure the path includes /public/wp-content/ and strip anything in between
+        // Example: /public/music/wp-content/ → /public/wp-content/
+        $local_path = preg_replace( '#/public/.*?/wp-content/#', '/public/wp-content/', $local_path );
+        echo $local_path . '<br />';
+        // If the default image doesn't exist locally, try a slugified title version in the same folder
+        if ( ! file_exists( $local_path ) ) {
+            // Slugify title and replace apostrophes with hyphens
+            $slugified_title = $title ?: 'image';
+            $slugified_title = str_replace( ["'", "’"], '-', $slugified_title );
+            $slugified_title = sanitize_title( $slugified_title );
+
+            $path_info = pathinfo( $local_path );
+
+            if ( isset( $path_info['dirname'] ) ) {
+                $alt_local_path = trailingslashit( $path_info['dirname'] ) . $slugified_title . '.jpg';
+
+                if ( file_exists( $alt_local_path ) ) {
+                    // Build proper web URL from corrected path
+                    $relative_url = preg_replace( '#^.*?/public/wp-content/#', 'wp-content/', $alt_local_path );
+                    $default_image_url = home_url( '/' . $relative_url );
+                } else {
+                    $default_image_url = '';
+                }
+            } else {
+                $default_image_url = '';
             }
+        } else {
+            // File exists — rebuild valid URL
+            $relative_url = preg_replace( '#^.*?/public/wp-content/#', 'wp-content/', $local_path );
+            $default_image_url = home_url( '/' . $relative_url );
         }
+    }
+
+    // Attach whichever image is valid
+    if ( $default_image_url ) {
+        $attach_featured_image( $post_id, $default_image_url, $slug ?: ( $title ?: 'image' ) );
+    } elseif ( ! empty( $item['thumb_encoded'] ) ) {
+        $attach_featured_image( $post_id, $item['thumb_encoded'], $slug ?: ( $title ?: 'image' ) );
+    }
+}
+
     }
 
     error_log( "Batch imported: start={$start}, count=" . count( $data['data'] ) );

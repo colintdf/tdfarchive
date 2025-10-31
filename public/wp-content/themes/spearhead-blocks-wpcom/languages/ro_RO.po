@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Spearhead-blocks\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-11-08T04:03:58+00:00\n"
+"PO-Revision-Date: 2023-11-07 04:03:02+0000\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#. Theme Name of the theme
+msgid "Spearhead"
+msgstr "Spearhead"
+
+#: patterns/comments.php
+msgctxt "Pattern title"
+msgid "Comments"
+msgstr "Comentarii"
+
+#: patterns/404.php
+msgctxt "Pattern title"
+msgid "A 404 page"
+msgstr "O pagină 404"
+
+#. Theme URI of the theme
+msgid "https://wordpress.com/theme/spearhead-blocks/"
+msgstr "https://wordpress.com/theme/spearhead-blocks/"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Footer Only"
+msgstr "Numai subsol"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Header and Footer Only"
+msgstr "Numai antet și subsol"
+
+#: theme.json
+msgctxt "Custom template name"
+msgid "Blank"
+msgstr "Pagină goală"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background (Dark)"
+msgstr "Fundal (întunecat)"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Foreground (Dark)"
+msgstr "Prim-plan (întunecat)"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary (Dark)"
+msgstr "Secundară (întunecată)"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary (Dark)"
+msgstr "Principală (întunecată)"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background"
+msgstr "Fundal"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Foreground"
+msgstr "Prim-plan"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "Secundară"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "Principală"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "IBM Plex Mono"
+msgstr "IBM Plex Mono"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Libre Franklin"
+msgstr "Libre Franklin"
+
+#: theme.json
+msgctxt "Font family name"
+msgid "System Font"
+msgstr "System Font"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr "Foarte mare"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Mare"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Mediu"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Mic"
+
+#. Description of the theme
+msgid "Spearhead Blocks is the block based version of the original Spearhead theme."
+msgstr "Spearhead Blocks este versiunea bazată pe blocuri a temei originale Spearhead."
+
+#: patterns/404.php:15
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Se pare că nu am găsit nimic la această locație. Încerci o nouă căutare?"
+
+#: patterns/404.php:11
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Hopa! Acea pagina nu poate fi găsită."
