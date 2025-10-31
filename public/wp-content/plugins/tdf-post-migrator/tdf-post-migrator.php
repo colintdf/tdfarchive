@@ -490,7 +490,7 @@ public function migrate_posts( $start = 0 ) {
         }
         $content = $full_json['post_content'] ?? '';
         if (empty($content)) {
-            $fallbackapi = wp_remote_get( "{$apidomain}/?action=get_content&site_id={$site_id}&content_id={$content_id}", array(
+            $fallbackapi = wp_remote_get( "{$apidomain}/?action=getArticle&index={$site_id}&contentid={$content_id}", array(
                 'timeout'   => 30,
                 'sslverify' => false,
                 'headers'   => array( 'Accept' => 'application/json' ),
