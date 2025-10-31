@@ -500,11 +500,12 @@ public function migrate_posts( $start = 0 ) {
                 $fallbackdata = json_decode( $fallbackbody, true );
                 if (is_array($fallbackdata[0]) && isset($fallbackdata[0]['content_text'])) {
                     $content = $fallbackdata[0]['content_text'];
+                    // strip all image tags
+                    $content = preg_replace('/<img[^>]+\>/i', '', $content);
                 }
          
             }
         }
-        echo $content;exit;
         // --- Replace in-body image links ---
 if ( ! empty( $content ) ) {
     // 1. Replace any old subdomains (film, music, television, gaming, geeklife, life)
