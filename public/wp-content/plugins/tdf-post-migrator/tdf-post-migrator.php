@@ -498,6 +498,7 @@ public function migrate_posts( $start = 0 ) {
             if ( !is_wp_error( $fallbackapi ) ) {
                 $fallbackbody = wp_remote_retrieve_body( $fallbackapi );
                 $fallbackdata = json_decode( $fallbackbody, true );
+                var_dump($fallbackdata);exit;
                 if (is_array($fallbackdata) && isset($fallbackdata['content_text'])) {
                     $content = $fallbackdata['content_text'];
                 }
