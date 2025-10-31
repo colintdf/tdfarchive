@@ -477,6 +477,7 @@ public function migrate_posts( $start = 0 ) {
         $ctype_l = strtolower( trim( $ctype ) );
         if ( in_array( $ctype_l, array( 'film', 'game', 'series' ), true ) ) {
             // Skip items of these content types
+            echo 'Skipping content type: ' . esc_html( $ctype ) . "\n";
             continue;
         }
 
