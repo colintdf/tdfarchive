@@ -506,6 +506,12 @@ public function migrate_posts( $start = 0 ) {
          
             }
         }
+
+        // if content is empty or less than 500 characters then skip
+        if ( empty( $content ) || strlen( strip_tags( $content ) ) < 500 ) {
+            echo 'Skipping empty or too short content for ID: ' . esc_html( $content_id ) . "\n";
+            continue;
+        }
         // --- Replace in-body image links ---
 if ( ! empty( $content ) ) {
     // 1. Replace any old subdomains (film, music, television, gaming, geeklife, life)
